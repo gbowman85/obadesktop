@@ -15,12 +15,12 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Essential theme with the underlying Bootstrap theme.
+ * OBA theme with the underlying Bootstrap theme.
  *
  * @package    theme
- * @subpackage evolve-D
- * @author     Chris Kenniburg
- * @author     Based on code originally written by G J Bernard, Mary Evans, Bas Brands, Stuart Lamour and David Scotson Julian Ridden.
+ * @subpackage OBA
+ * @author     Graham Bowman
+ * @author     Based on code originally written by Chris Kenniburg, G J Bernard, Mary Evans, Bas Brands, Stuart Lamour and David Scotson Julian Ridden.
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 

@@ -15,9 +15,9 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Theme evolved lib.
+ * Theme oba lib.
  *
- * @package    theme_evolved
+ * @package    theme_oba
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
@@ -25,13 +25,13 @@
  * Extra LESS code to inject.
  *
  * This will generate some LESS code from the settings used by the user. We cannot use
- * the {@link theme_evolved_less_variables()} here because we need to create selectors or
+ * the {@link theme_oba_less_variables()} here because we need to create selectors or
  * alter existing ones.
  *
  * @param theme_config $theme The theme config object.
  * @return string Raw LESS code.
  */
-function theme_evolved_extra_less($theme) {
+function theme_oba_extra_less($theme) {
     $content = '';
     $imageurl = $theme->setting_file_url('backgroundimage', 'backgroundimage');
     // Sets the background image, and its settings.
@@ -75,7 +75,7 @@ function theme_evolved_extra_less($theme) {
  * @param theme_config $theme The theme config object.
  * @return array of LESS variables without the @.
  */
-function theme_evolved_less_variables($theme) {
+function theme_oba_less_variables($theme) {
     $variables = array();
     if (!empty($theme->settings->bodybackground)) {
         $variables['bodyBackground'] = $theme->settings->bodybackground;
@@ -101,14 +101,14 @@ function theme_evolved_less_variables($theme) {
  * @param theme_config $theme The theme config object.
  * @return string The parsed CSS The parsed CSS.
  */
-function theme_evolved_process_css($css, $theme) {
+function theme_oba_process_css($css, $theme) {
      // Set the background image for the logo.
     $logosmall = $theme->setting_file_url('logosmall', 'logosmall');
-    $css = theme_evolved_set_logosmall($css, $logosmall);
+    $css = theme_oba_set_logosmall($css, $logosmall);
     
     // Set the background image for the frontpage.
     $fpbkg = $theme->setting_file_url('fpbkg', 'fpbkg');
-    $css = theme_evolved_set_fpbkg($css, $fpbkg);
+    $css = theme_oba_set_fpbkg($css, $fpbkg);
 
 
     // Set custom CSS.
@@ -117,7 +117,7 @@ function theme_evolved_process_css($css, $theme) {
     } else {
         $customcss = null;
     }
-    $css = theme_evolved_set_customcss($css, $customcss);
+    $css = theme_oba_set_customcss($css, $customcss);
 
     // Set the Fonts.
     if ($theme->settings->fontselect ==1) {
@@ -232,10 +232,10 @@ function theme_evolved_process_css($css, $theme) {
         $bodyweight = '400';
     }
     
-    $css = theme_evolved_set_headingfont($css, $headingfont);
-    $css = theme_evolved_set_bodyfont($css, $bodyfont);
-    $css = theme_evolved_set_bodysize($css, $bodysize);
-    $css = theme_evolved_set_bodyweight($css, $bodyweight);
+    $css = theme_oba_set_headingfont($css, $headingfont);
+    $css = theme_oba_set_bodyfont($css, $bodyfont);
+    $css = theme_oba_set_bodysize($css, $bodysize);
+    $css = theme_oba_set_bodyweight($css, $bodyweight);
 
     // Set marketbox CSS.
     if (!empty($theme->settings->marketboxcolor)) {
@@ -243,7 +243,7 @@ function theme_evolved_process_css($css, $theme) {
     } else {
         $marketboxcolor = '';
     }
-    $css = theme_evolved_set_marketboxcolor($css, $marketboxcolor);
+    $css = theme_oba_set_marketboxcolor($css, $marketboxcolor);
 
     // Set topic week background CSS.
     if (!empty($theme->settings->topicweekcolor)) {
@@ -251,7 +251,7 @@ function theme_evolved_process_css($css, $theme) {
     } else {
         $topicweekcolor = '';
     }
-    $css = theme_evolved_set_topicweekcolor($css, $topicweekcolor);
+    $css = theme_oba_set_topicweekcolor($css, $topicweekcolor);
 
     // Set Socialwall icon and text color CSS.
     if (!empty($theme->settings->swicontext)) {
@@ -259,7 +259,7 @@ function theme_evolved_process_css($css, $theme) {
     } else {
         $swicontext = '';
     }
-    $css = theme_evolved_set_swicontext($css, $swicontext);
+    $css = theme_oba_set_swicontext($css, $swicontext);
 
     // Set Socialwall post background color CSS.
     if (!empty($theme->settings->swpost)) {
@@ -267,7 +267,7 @@ function theme_evolved_process_css($css, $theme) {
     } else {
         $swpost = '';
     }
-    $css = theme_evolved_set_swpost($css, $swpost);
+    $css = theme_oba_set_swpost($css, $swpost);
 
     // Set Socialwall add post color CSS.
     if (!empty($theme->settings->swaddpost)) {
@@ -275,7 +275,7 @@ function theme_evolved_process_css($css, $theme) {
     } else {
         $swaddpost = '';
     }
-    $css = theme_evolved_set_swaddpost($css, $swaddpost);
+    $css = theme_oba_set_swaddpost($css, $swaddpost);
 
     // Set Socialwall message color CSS.
     if (!empty($theme->settings->swmessage)) {
@@ -283,7 +283,7 @@ function theme_evolved_process_css($css, $theme) {
     } else {
         $swmessage = '';
     }
-    $css = theme_evolved_set_swmessage($css, $swmessage);
+    $css = theme_oba_set_swmessage($css, $swmessage);
 
     // Set Socialwall attachment color CSS.
     if (!empty($theme->settings->swattach)) {
@@ -291,7 +291,7 @@ function theme_evolved_process_css($css, $theme) {
     } else {
         $swattach = '';
     }
-    $css = theme_evolved_set_swattach($css, $swattach);
+    $css = theme_oba_set_swattach($css, $swattach);
 
     // Set Socialwall attachment color CSS.
     if (!empty($theme->settings->swcomment)) {
@@ -299,7 +299,7 @@ function theme_evolved_process_css($css, $theme) {
     } else {
         $swcomment = '';
     }
-    $css = theme_evolved_set_swcomment($css, $swcomment);
+    $css = theme_oba_set_swcomment($css, $swcomment);
 
     // Socialwall Labels.
     if (!empty($theme->settings->swlabelpost)) {
@@ -307,7 +307,7 @@ function theme_evolved_process_css($css, $theme) {
     } else {
         $swlabelpost = '';
     }
-    $css = theme_evolved_set_swlabelpost($css, $swlabelpost);
+    $css = theme_oba_set_swlabelpost($css, $swlabelpost);
     
     // Socialwall Labels.
     if (!empty($theme->settings->swlabelmessage)) {
@@ -315,7 +315,7 @@ function theme_evolved_process_css($css, $theme) {
     } else {
         $swlabelmessage = '';
     }
-    $css = theme_evolved_set_swlabelmessage($css, $swlabelmessage);
+    $css = theme_oba_set_swlabelmessage($css, $swlabelmessage);
 
     // Socialwall Labels.
     if (!empty($theme->settings->swlabelcomment)) {
@@ -323,7 +323,7 @@ function theme_evolved_process_css($css, $theme) {
     } else {
         $swlabelcomment = '';
     }
-    $css = theme_evolved_set_swlabelcomment($css, $swlabelcomment);
+    $css = theme_oba_set_swlabelcomment($css, $swlabelcomment);
 
     // Socialwall Labels.
     if (!empty($theme->settings->swlabelattachment)) {
@@ -331,7 +331,7 @@ function theme_evolved_process_css($css, $theme) {
     } else {
         $swlabelattachment = '';
     }
-    $css = theme_evolved_set_swlabelattachment($css, $swlabelattachment);
+    $css = theme_oba_set_swlabelattachment($css, $swlabelattachment);
     
     // Set custom CSS.
     if (!empty($theme->settings->swmultilangcss)) {
@@ -339,7 +339,7 @@ function theme_evolved_process_css($css, $theme) {
     } else {
         $swmultilangcss = null;
     }
-    $css = theme_evolved_set_swmultilangcss($css, $swmultilangcss);
+    $css = theme_oba_set_swmultilangcss($css, $swmultilangcss);
 
 
     return $css;
@@ -353,7 +353,7 @@ function theme_evolved_process_css($css, $theme) {
  * @param string $customcss The custom CSS to add.
  * @return string The CSS which now contains our custom CSS.
  */
-function theme_evolved_set_customcss($css, $customcss) {
+function theme_oba_set_customcss($css, $customcss) {
     $tag = '[[setting:customcss]]';
     $replacement = $customcss;
     if (is_null($replacement)) {
@@ -366,7 +366,7 @@ function theme_evolved_set_customcss($css, $customcss) {
 }
 
 //Adds custom background color to marketboxes
-function theme_evolved_set_marketboxcolor($css, $marketboxcolor) {
+function theme_oba_set_marketboxcolor($css, $marketboxcolor) {
     $tag = '[[setting:marketboxcolor]]';
     $replacement = $marketboxcolor;
         if (is_null($replacement)) {
@@ -379,7 +379,7 @@ function theme_evolved_set_marketboxcolor($css, $marketboxcolor) {
 }
 
 //Adds custom background color to topics and weeks
-function theme_evolved_set_topicweekcolor($css, $topicweekcolor) {
+function theme_oba_set_topicweekcolor($css, $topicweekcolor) {
     $tag = '[[setting:topicweekcolor]]';
     $replacement = $topicweekcolor;
         if (is_null($replacement)) {
@@ -392,7 +392,7 @@ function theme_evolved_set_topicweekcolor($css, $topicweekcolor) {
 }
 
 //Adds custom Socialwall Labels
-function theme_evolved_set_swlabelpost($css, $swlabelpost) {
+function theme_oba_set_swlabelpost($css, $swlabelpost) {
     $tag = '[[setting:swlabelpost]]';
     $replacement = $swlabelpost;
         if (is_null($replacement)) {
@@ -405,7 +405,7 @@ function theme_evolved_set_swlabelpost($css, $swlabelpost) {
 }
 
 //Adds custom Socialwall Labels
-function theme_evolved_set_swlabelmessage($css, $swlabelmessage) {
+function theme_oba_set_swlabelmessage($css, $swlabelmessage) {
     $tag = '[[setting:swlabelmessage]]';
     $replacement = $swlabelmessage;
         if (is_null($replacement)) {
@@ -418,7 +418,7 @@ function theme_evolved_set_swlabelmessage($css, $swlabelmessage) {
 }
 
 //Adds custom Socialwall Labels
-function theme_evolved_set_swlabelcomment($css, $swlabelcomment) {
+function theme_oba_set_swlabelcomment($css, $swlabelcomment) {
     $tag = '[[setting:swlabelcomment]]';
     $replacement = $swlabelcomment;
         if (is_null($replacement)) {
@@ -431,7 +431,7 @@ function theme_evolved_set_swlabelcomment($css, $swlabelcomment) {
 }
 
 //Adds custom Socialwall Labels
-function theme_evolved_set_swlabelattachment($css, $swlabelattachment) {
+function theme_oba_set_swlabelattachment($css, $swlabelattachment) {
     $tag = '[[setting:swlabelattachment]]';
     $replacement = $swlabelattachment;
         if (is_null($replacement)) {
@@ -444,7 +444,7 @@ function theme_evolved_set_swlabelattachment($css, $swlabelattachment) {
 }
 
 //Adds custom Socialwall Icon and text color
-function theme_evolved_set_swicontext($css, $swicontext) {
+function theme_oba_set_swicontext($css, $swicontext) {
     $tag = '[[setting:swicontext]]';
     $replacement = $swicontext;
         if (is_null($replacement)) {
@@ -457,7 +457,7 @@ function theme_evolved_set_swicontext($css, $swicontext) {
 }
 
 //Adds custom Socialwall Icon and text color
-function theme_evolved_set_swpost($css, $swpost) {
+function theme_oba_set_swpost($css, $swpost) {
     $tag = '[[setting:swpost]]';
     $replacement = $swpost;
         if (is_null($replacement)) {
@@ -470,7 +470,7 @@ function theme_evolved_set_swpost($css, $swpost) {
 }
 
 //Adds custom Socialwall Icon and text color
-function theme_evolved_set_swaddpost($css, $swaddpost) {
+function theme_oba_set_swaddpost($css, $swaddpost) {
     $tag = '[[setting:swaddpost]]';
     $replacement = $swaddpost;
         if (is_null($replacement)) {
@@ -483,7 +483,7 @@ function theme_evolved_set_swaddpost($css, $swaddpost) {
 }
 
 //Adds custom Socialwall Icon and text color
-function theme_evolved_set_swmessage($css, $swmessage) {
+function theme_oba_set_swmessage($css, $swmessage) {
     $tag = '[[setting:swmessage]]';
     $replacement = $swmessage;
         if (is_null($replacement)) {
@@ -496,7 +496,7 @@ function theme_evolved_set_swmessage($css, $swmessage) {
 }
 
 //Adds custom Socialwall attachment color
-function theme_evolved_set_swattach($css, $swattach) {
+function theme_oba_set_swattach($css, $swattach) {
     $tag = '[[setting:swattach]]';
     $replacement = $swattach;
         if (is_null($replacement)) {
@@ -509,7 +509,7 @@ function theme_evolved_set_swattach($css, $swattach) {
 }
 
 //Adds custom Socialwall attachment color
-function theme_evolved_set_swcomment($css, $swcomment) {
+function theme_oba_set_swcomment($css, $swcomment) {
     $tag = '[[setting:swcomment]]';
     $replacement = $swcomment;
         if (is_null($replacement)) {
@@ -521,7 +521,7 @@ function theme_evolved_set_swcomment($css, $swcomment) {
     return $css;
 }
 
-function theme_evolved_set_swmultilangcss($css, $swmultilangcss) {
+function theme_oba_set_swmultilangcss($css, $swmultilangcss) {
     $tag = '[[setting:swmultilangcss]]';
     $replacement = $swmultilangcss;
     if (is_null($replacement)) {
@@ -540,7 +540,7 @@ function theme_evolved_set_swmultilangcss($css, $swmultilangcss) {
  * @param string $logo The URL of the logo.
  * @return string The parsed CSS
  */
-function theme_evolved_set_logosmall($css, $logosmall) {
+function theme_oba_set_logosmall($css, $logosmall) {
     $tag = '[[setting:logosmall]]';
     $replacement = $logosmall;
     if (is_null($replacement)) {
@@ -552,7 +552,7 @@ function theme_evolved_set_logosmall($css, $logosmall) {
     return $css;
 }
 
-function theme_evolved_set_headingfont($css, $headingfont) {
+function theme_oba_set_headingfont($css, $headingfont) {
     $tag = '[[setting:headingfont]]';
     $replacement = $headingfont;
     if (is_null($replacement)) {
@@ -562,7 +562,7 @@ function theme_evolved_set_headingfont($css, $headingfont) {
     return $css;
 }
 
-function theme_evolved_set_bodyfont($css, $bodyfont) {
+function theme_oba_set_bodyfont($css, $bodyfont) {
     $tag = '[[setting:bodyfont]]';
     $replacement = $bodyfont;
     if (is_null($replacement)) {
@@ -572,7 +572,7 @@ function theme_evolved_set_bodyfont($css, $bodyfont) {
     return $css;
 }
 
-function theme_evolved_set_bodysize($css, $bodysize) {
+function theme_oba_set_bodysize($css, $bodysize) {
     $tag = '[[setting:bodysize]]';
     $replacement = $bodysize;
     if (is_null($replacement)) {
@@ -582,7 +582,7 @@ function theme_evolved_set_bodysize($css, $bodysize) {
     return $css;
 }
 
-function theme_evolved_set_bodyweight($css, $bodyweight) {
+function theme_oba_set_bodyweight($css, $bodyweight) {
     $tag = '[[setting:bodyweight]]';
     $replacement = $bodyweight;
     if (is_null($replacement)) {
@@ -595,7 +595,7 @@ function theme_evolved_set_bodyweight($css, $bodyweight) {
 /**
  * Adds the frontpage background to CSS.
  */
-function theme_evolved_set_fpbkg($css, $fpbkg) {
+function theme_oba_set_fpbkg($css, $fpbkg) {
     $tag = '[[setting:fpbkg]]';
     $replacement = $fpbkg;
     if (is_null($replacement)) {
@@ -620,9 +620,9 @@ function theme_evolved_set_fpbkg($css, $fpbkg) {
  * @param array $options
  * @return bool
  */
-function theme_evolved_pluginfile($course, $cm, $context, $filearea, $args, $forcedownload, array $options = array()) {
+function theme_oba_pluginfile($course, $cm, $context, $filearea, $args, $forcedownload, array $options = array()) {
     if ($context->contextlevel == CONTEXT_SYSTEM && ($filearea === 'logosmall' || $filearea === 'backgroundimage' || $filearea === 'back1' || $filearea === 'back2' || $filearea === 'back3' || $filearea === 'back4' || $filearea === 'fpbkg')) {
-        $theme = theme_config::load('evolved');
+        $theme = theme_config::load('oba');
         return $theme->setting_file_serve($filearea, $args, $forcedownload, $options);
     } else {
         send_file_not_found();
@@ -632,6 +632,6 @@ function theme_evolved_pluginfile($course, $cm, $context, $filearea, $args, $for
 /**
  * Page requires jQuery. */
 
-function theme_evolved_page_init(moodle_page $page) {
-$page->requires->jquery_plugin('tab', 'theme_evolved');
+function theme_oba_page_init(moodle_page $page) {
+$page->requires->jquery_plugin('tab', 'theme_oba');
 }

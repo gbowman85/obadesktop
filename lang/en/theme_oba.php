@@ -15,17 +15,17 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Theme evolved lang file.
+ * Theme oba lang file.
  *
- * @package    theme_evolved
+ * @package    theme_oba
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 //Theme Info
-$string['configtitle'] = 'evolved';
-$string['choosereadme'] = '<p>evolve-D is a beautiful, stylish, and smart theme designed to build upon and enhance the core theme More. Dearborn Public Schools is a K-12 school distict in Dearborn, Michigan.  </p>
+$string['configtitle'] = 'oba';
+$string['choosereadme'] = '<p>OBA is based on evolve-D. evolve-D is a beautiful, stylish, and smart theme designed to build upon and enhance the core theme More. Dearborn Public Schools is a K-12 school distict in Dearborn, Michigan.  </p>
 <p>The base theme is More and we borrowed features from Aardvark and Essential themes to add style and functionality.  Special thanks to Shaun Daubney and Julian Ridden for thier work which is copied here with sincerest of flattery to their amazing work.</p>';
-$string['pluginname'] = 'evolve-D';
+$string['pluginname'] = 'OBA';
 
 //Theme Admin Panel Labels
 $string['geneicsettings'] = 'General Settings';

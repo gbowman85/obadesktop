@@ -15,9 +15,9 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Theme evolveD version file.
+ * Theme OBA version file.
  *
- * @package    theme_evolved
+ * @package    theme_oba
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
@@ -25,9 +25,9 @@ defined('MOODLE_INTERNAL') || die;
 
 $plugin->version   = 2015092300;
 $plugin->maturity = MATURITY_STABLE; // this version's maturity level.
-$plugin->release = '2.1.1 Evolve-D Dearborn Public Schools (Build: 2015092300)';
+$plugin->release = '2.1.1 OBA (Build: 2015092300)';
 $plugin->requires  = 2014050800;
-$plugin->component = 'theme_evolved';
+$plugin->component = 'theme_oba';
 $plugin->dependencies = array(
     'theme_bootstrapbase'  => 2014050800,
     'theme_clean'  => 2014050800,

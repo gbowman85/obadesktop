@@ -14,15 +14,15 @@
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 /**
- * evolved theme with the underlying Bootstrap theme.
+ * oba theme with the underlying Bootstrap theme.
  *
  * @package    theme
- * @subpackage evolved
- * @author     Based on code originally written by G J Barnard, Mary Evans, Bas Brands, Stuart Lamour,David Scotson and Julian (@moodleman) Ridden.
+ * @subpackage oba
+ * @author     Based on code originally written by Chris Kenniburg, G J Barnard, Mary Evans, Bas Brands, Stuart Lamour,David Scotson and Julian (@moodleman) Ridden.
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
  
- class theme_evolved_core_renderer extends theme_bootstrapbase_core_renderer {
+ class theme_oba_core_renderer extends theme_bootstrapbase_core_renderer {
             /*
      * This renders the navbar.
      * Uses bootstrap compatible html.
@@ -75,13 +75,13 @@
         if (isloggedin() && !isguestuser() && $hasdisplaymycourses) {
             $mycoursetitle = $this->page->theme->settings->mycoursetitle;
             if ($mycoursetitle == 'module') {
-                $branchtitle = get_string('mymodules', 'theme_evolved');
+                $branchtitle = get_string('mymodules', 'theme_oba');
             } else if ($mycoursetitle == 'unit') {
-                $branchtitle = get_string('myunits', 'theme_evolved');
+                $branchtitle = get_string('myunits', 'theme_oba');
             } else if ($mycoursetitle == 'class') {
-                $branchtitle = get_string('myclasses', 'theme_evolved');
+                $branchtitle = get_string('myclasses', 'theme_oba');
             } else {
-                $branchtitle = get_string('mycourses', 'theme_evolved');
+                $branchtitle = get_string('mycourses', 'theme_oba');
             }
             $branchlabel = '<i class="fa fa-briefcase"></i>'.$branchtitle;
             $branchurl   = new moodle_url('/my/index.php');
@@ -95,7 +95,7 @@
                     }
                 }
             } else {
-                $noenrolments = get_string('noenrolments', 'theme_evolved');
+                $noenrolments = get_string('noenrolments', 'theme_oba');
                 $branch->add('<em>'.$noenrolments.'</em>', new moodle_url('/'), $noenrolments);
             }
             
